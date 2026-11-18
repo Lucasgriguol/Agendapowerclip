@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1f2937">
+  <title>Power Clip</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="logo.jpg" alt="Power Clip">
+        </div>
+        <div><strong id="businessName">Power Clip</strong><small>Panel de gestión</small></div>
+      </div>
+      <nav class="main-nav">
+        <button class="nav-link active" data-view="dashboard"><span>⌂</span>Inicio</button>
+        <button class="nav-link" data-view="sales"><span>＋</span>Vender</button>
+        <button class="nav-link" data-view="debts"><span>◷</span>Fiados</button>
+        <button class="nav-link" data-view="clients"><span>♙</span>Clientes</button>
+        <button class="nav-link" data-view="more"><span>•••</span>Más opciones</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="connection-dot" id="connectionDot"></span>
+        <span id="connectionText">Conectando…</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">☰</button>
+        <div class="page-heading">
+          <h1 id="pageTitle">Resumen</h1>
+          <p id="todayLabel"></p>
+        </div>
+        <div class="top-actions">
+          <span class="month-pill" id="monthLabel"></span>
+          <button class="btn btn-primary" id="quickSaleBtn">＋ Vender</button>
+        </div>
+      </header>
+
+      <section class="view" id="dashboard"></section>
+      <section class="view hidden" id="sales"></section>
+      <section class="view hidden" id="debts"></section>
+      <section class="view hidden" id="clients"></section>
+      <section class="view hidden" id="products"></section>
+      <section class="view hidden" id="expenses"></section>
+      <section class="view hidden" id="cash"></section>
+      <section class="view hidden" id="suppliers"></section>
+      <section class="view hidden" id="reports"></section>
+      <section class="view hidden" id="settings"></section>
+      <section class="view hidden" id="more"></section>
+    </main>
+  </div>
+
+  <div class="modal-wrap hidden" id="modal">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close aria-label="Cerrar">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
